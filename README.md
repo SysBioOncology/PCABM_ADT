@@ -22,7 +22,7 @@ Contains all files to run the prostate cancer agent based model (PCABM). Model w
 PCABM was adapted to be more prostate cancer specific and contains tumor cells, fibroblast, M1 and M2 type macrophages. 
 For detailed explenation on interactions between cell types, please see project report. 
 
-Function growTumor is the main function that bundles all other functions and runs all parts. 
+***growTumor*** is the main function that bundles all other functions and runs all parts. 
 
 ***getHyperParameters***
 Get parameters for condition with R1881, DMSO, CRPC, or LNCaP-abl only in DMSO
