@@ -3,97 +3,88 @@
 Model used in the paper 'Agent-based modeling of the prostate tumor microenvironment uncovers spatial tumor growth constraints and immunomodulatory properties' by MNG van Genderen et. al. 
 The model was based on a model by Kather et. al. (2017) http://dx.doi.org/10.5281/zenodo.853342
 
-# MAIN FOLDER - PCABM 
+# MAIN FOLDER  
 The main folder contains examples of how to run and use PCABM. 
 
-# ABM_run
+*ABM_run*
 Example of how to run a simple simulation of PCABM. Function getHyperParameters determines which set of parameter is used (with or without R1881 or castration resistance). 
 
-# ABM_PSO_LNCaP_R1881
-Example of how to run parameter optimizations based on incucyte data. Optimizations were run 50 times for each dataset. 
-Median parameter value over all optimiziations over all datasets was used in PCABM. 
-
-# ABM_CRPC_variation
+*ABM_CRPC_variation*
 Run CRPC growth in the TME with different defined ratios of cells.
 
-# ABM_CRPC_spontaneous
+*ABM_CRPC_spontaneous*
 Run 'spontaneous' development of CRPC in the TME. 
 This simulation contains a 'full' cycle of PCa growth. Starting with growth in R1881, moving to DMSO (castration) and eventually growth
 of resistant cells in DMSO. Resistant tumor cells develop spontaneously upon proliferation of non-resistant cells with probability TUpres.
 
-## FOLDER - subroutines_ABM
+# FOLDER - subroutines_ABM
 Contains all files to run the prostate cancer agent based model (PCABM). Model was based on ABM for CRC by Jakob Nikolas Kather et al. (2017)
 PCABM was adapted to be more prostate cancer specific and contains tumor cells, fibroblast, M1 and M2 type macrophages. 
 For detailed explenation on interactions between cell types, please see project report. 
 
-Function # growTumor is the main function that bundles all other functions and runs all parts. 
+Function growTumor is the main function that bundles all other functions and runs all parts. 
 
-#getHyperParameters
+*getHyperParameters*
 Get parameters for condition with R1881, DMSO, CRPC, or LNCaP-abl only in DMSO
 
-#getSystemParamters
+*getSystemParamters*
 Get all general parameters
 Although not used in project report - tumor cells can posibly be stem cells (set parameter TUps to non-zero in getSystemParams.m).
 
-# getAdjacent
+*getAdjacent*
 Get cell neighborhood
 
-# shuffleCells
+*shuffleCells*
 Randomly order vector of cells
 
-#TU_go_grow_die
+*TU_go_grow_die*
 Function for modeling tumor cell migration, growth and death.
 
-# F_go_grow_die
+*F_go_grow_die*
 Function for modeling firoblast growth and migration
 
-#mCellRound
+*mCellRound*
 Function for modeling macrophage round/behavior. Combines all seperate macrophages functions.
 
-#M_go
+*M_go*
 Function for modeling macrophage migration
 
-#M_go_die
+*M_go_die*
 Function for modeling macropahge migration & death
 
-#M_kill
+*M_kill*
 Function for modeling macropahge killing of tumor cells
 
-#M_promote
+*M_promote*
 NOT USED: Model macrophages promoting tumor cells, but only for tumor cells close to the macrophage. Could be added/replaced in mCellRound in future use.
 
-#updateSystem
+*updateSystem*
 Function to update sytem in each time step (iteration) after all cells performed their round of actions.
 
-#visualizeSystem
+*visualizeSystem*
 Function to visualize simulation
 
-#writeMyVideo
+*writeMyVideo*
 Function to write visulized simulation to video file
 
-## FOLDER - functions
+# FOLDER - functions
 Contains functions for optimizing parameters and visualizing outputs of PCABM. 
 
-# ABM_PSO_function
+*ABM_PSO_function*
 Function that runs particle swarm optimization (PSO). PSO fits parameters by comparing best Mean Squared Error (MSE) between Relative Tumor Cell Numbers from Incucyte data to model output for each fit.
 
-# MSE
+*MSE*
 Objective function for PSO: the MSE.  
 
-# ploPSOVarCat-2D-3D
+*ploPSOVarCat-2D-3D*
 Plots optimized parameter sets in categorical, 2D or 3D. 
 
-# iqsensanalysis
+*iqsensanalysis*
 Performs sensitivity analysis of optimized parameter sets. Outputs relative number of tumor cells over time, for median parameters, 
 and parameters within the interquartile range. 
 
-# plot_incucyte
+*plot_incucyte*
 Plots (incucyte) relative number of tumor cells over time from excel files. 
 
-#shadedErrorBar
+*shadedErrorBar*
 Function by Rob Campbell - November 2009, for plotting shaded errobar lineplots. 
-
-## FOLDER - data
-Contains all datafiles used for optimizing PCABM (Incucyte data). Fib.xlsx contains growth of fibroblasts over time, LNCaP_R1881.xlsx contains growth of LNCaP cells in R1881
-with or without other TME cell types, LNCaP_deprived.xlsx contains growth of LNCaPs in DMSO with with or without other TME cell types. 
-hormoneconditions.xlsx contains data used for macrophage hypothesis, seperately varying hormone conditions of LNCaP cells and macrophages.
