@@ -17,7 +17,7 @@ Run 'spontaneous' development of CRPC in the TME.
 This simulation contains a 'full' cycle of PCa growth. Starting with growth in R1881, moving to DMSO (castration) and eventually growth
 of resistant cells in DMSO. Resistant tumor cells develop spontaneously upon proliferation of non-resistant cells with probability TUpres.
 
-# Subroutines_ABM
+## Subroutines_ABM
 Contains all files to run the prostate cancer agent based model (PCABM). Model was based on ABM for CRC by Jakob Nikolas Kather et al. (2017)
 PCABM was adapted to be more prostate cancer specific and contains tumor cells, fibroblast, M1 and M2 type macrophages. 
 For detailed explenation on interactions between cell types, please see project report. 
