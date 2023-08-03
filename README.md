@@ -1,7 +1,6 @@
 ## PCABM_ADT
 
 Model used in the paper 'Agent-based modeling of the prostate tumor microenvironment uncovers spatial tumor growth constraints and immunomodulatory properties' by MNG van Genderen et. al. 
-Part of the code is adapted from a model by Kather et. al. (2017) http://dx.doi.org/10.5281/zenodo.853342
 
 ## Main Folder  
 The main folder contains examples of how to run and use PCABM. 
@@ -78,3 +77,6 @@ Objective function for PSO: the MSE.
 
 ***shadedErrorBar***
 Function by Rob Campbell - November 2009, for plotting shaded errobar lineplots. 
+
+## Acknowledgements
+Part of the code is adapted from a model by Kather et. al. (2017) http://dx.doi.org/10.5281/zenodo.853342
