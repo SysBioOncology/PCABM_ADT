@@ -1,6 +1,6 @@
 ## PCABM_ADT
 
-Model used in the paper 'Agent-based modeling of the prostate tumor microenvironment uncovers spatial tumor growth constraints and immunomodulatory properties' by MNG van Genderen et. al. 
+Model used in the paper 'Agent-based modeling of the prostate tumor microenvironment uncovers spatial tumor growth constraints and immunomodulatory properties' by MNG van Genderen et. al. https://doi.org/10.1038/s41540-024-00344-6
 
 ## Main Folder  
 The main folder contains examples of how to run and use PCABM. 
